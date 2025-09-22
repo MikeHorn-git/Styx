@@ -1,7 +1,6 @@
 winget install Kitware.CMake -e
 winget install BrechtSanders.WinLibs.MCF.UCRT -e
 
-winget install vim.vim -e --accept-source-agreements
 winget install VSCodium.VSCodium -e
 
 winget install Git.Git -e
@@ -26,5 +25,5 @@ winget install --id Microsoft.VisualStudio.2022.Community -e `
     --add Microsoft.VisualStudio.Workload.NativeDesktop `
     --add Component.Microsoft.Windows.DriverKit"
 
-$AddPATH = ";C:\Program Files\CMake\bin;C:\Program Files\Git\bin;C:\Program Files\Vim\vim91"
+$AddPATH = ";C:\Program Files\CMake\bin;C:\Program Files\Git\bin"
 [Environment]::SetEnvironmentVariable("Path", $env:Path + $AddPATH, "Machine")

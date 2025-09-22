@@ -15,12 +15,3 @@ $sysPath = Join-Path $drvDir "HEVD.sys"
 
 bcdedit /set TESTSIGNING ON
 bcdedit /set loadoptions DISABLE_INTEGRITY_CHECKS
-
-if (Test-Path $infPath) {
-    # Install the driver using the INF
-    pnputil /add-driver $infPath /install
-} else {
-    # Install manually
-    sc.exe create HEVD type= kernel binPath= $sysPath
-    sc.exe start HEVD
-}
