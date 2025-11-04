@@ -1,0 +1,18 @@
+# Binaries
+*.exe
+*.exp
+*.lib
+*.obj
+
+# Vagrant
+.vagrant
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
