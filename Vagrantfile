@@ -16,7 +16,7 @@ Vagrant.configure('2') do |config|
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = '4096'
     vb.cpus = 4
-    vb.name = 'StyxWindows11'
+    vb.name = 'Styx'
     vb.gui = false
     vb.check_guest_additions = false
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
