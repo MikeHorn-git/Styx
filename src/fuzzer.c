@@ -1,4 +1,5 @@
 // https://novafacing.github.io/practical-fuzzing/libfuzzer/kernel/windows/index.html
+
 #include <stdio.h>
 #include <windows.h>
 

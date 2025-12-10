@@ -26,17 +26,10 @@ Vagrant.configure('2') do |config|
     vmware.memory = '4096'
     vmware.cpus = 4
     vmware.gui = false
-    vmware.utility_certificate_path = "/opt/vagrant-vmware-desktop/certificates"
+    vmware.utility_certificate_path = '/opt/vagrant-vmware-desktop/certificates'
   end
 
-  config.vm.provision 'shell', path: 'scripts/setup.ps1'
-  config.vm.provision 'shell', path: 'scripts/winget.ps1'
-  config.vm.provision 'shell', path: 'scripts/tools.ps1'
-  config.vm.provision 'shell', path: 'scripts/osr.ps1'
-  config.vm.provision :reload
-
-  config.vm.provision 'shell', path: 'scripts/mount.ps1'
-  config.vm.provision 'shell', path: 'scripts/hevd.ps1'
-  config.vm.provision 'shell', path: 'scripts/rededr.ps1'
-  config.vm.provision :reload
+  config.vm.provision 'shell', path: 'scripts/setup/Set-AutoLogon.ps1'
+  config.vm.provision 'shell', path: 'scripts/setup/Download-EWDK.ps1'
+  config.vm.provision 'shell', path: 'scripts/tools/winget.ps1'
 end

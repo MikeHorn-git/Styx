@@ -22,16 +22,14 @@
       mdformat README.md
       nixfmt devenv.nix
       pwsh -Command "Install-Module -Name PSScriptAnalyzer -Force"
-      pwsh -Command "Invoke-ScriptAnalyzer -Path scripts/ps1 -Recurse"
+      pwsh -Command "Invoke-ScriptAnalyzer -Path scripts/ -Recurse"
       rubocop -A Vagrantfile'';
-    reqs.exec = "vagrant install vagrant-reload";
   };
 
   # https://devenv.sh/basics/
   enterShell = ''
     echo "Available commands:"
     echo " - lint         : Lint the all the repository"
-    echo " - reqs         : Install vagrant plugins"
   '';
 
   enterTest = ''

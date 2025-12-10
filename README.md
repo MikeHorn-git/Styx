@@ -27,7 +27,6 @@
 > [!Note]
 > Vagrant-vmware certificates are stored in `/opt/vagrant-vmware-desktop/certificates` by default.
 
-- [vagrant-reload](https://github.com/aidanns/vagrant-reload)
 - [vagrant-vmware-desktop](https://github.com/hashicorp/vagrant-vmware-desktop) (Optionnal)
 - [vagrant-vmware-utility](https://github.com/hashicorp/vagrant/blob/main/website/content/docs/providers/vmware/vagrant-vmware-utility.mdx) (Optionnal)
 

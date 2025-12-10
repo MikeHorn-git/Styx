@@ -1,0 +1,86 @@
+WinGetConfig:
+  Schema: https://aka.ms/winget-config.schema.2.0.json
+
+  Parameters:
+    - Name: AddPATH
+      Type: string
+      Value: ";C:\\Program Files\\CMake\\bin;C:\\Program Files\\Git\\bin"
+
+  Resources:
+    - Package:
+        Id: Kitware.CMake
+        Source: winget
+        InstallerType: exe
+        Ensure: Present
+
+    - Package:
+        Id: BrechtSanders.WinLibs.MCF.UCRT
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: VSCodium.VSCodium
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Git.Git
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Rustlang.Rustup
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Microsoft.Sysinternals.Suite
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Microsoft.WinDbg
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Microsoft.WindowsTerminal
+        Source: winget
+        Ensure: Present
+
+    - Package:
+        Id: Microsoft.WindowsSDK.10.0.26100
+        Source: winget
+        Ensure: Present
+        InstallerSwitches:
+          Silent: --accept-package-agreements --accept-source-agreements
+
+    - Package:
+        Id: Microsoft.WindowsWDK.10.0.26100
+        Source: winget
+        Ensure: Present
+        InstallerSwitches:
+          Silent: --accept-package-agreements --accept-source-agreements
+
+    - Package:
+        Id: Microsoft.VisualStudio.2022.Community
+        Source: winget
+        Ensure: Present
+        InstallerSwitches:
+          Silent: >-
+            --accept-package-agreements --accept-source-agreements --quiet --norestart
+            --addProductLang En-us
+            --add Microsoft.Component.VC.Runtime.UCRTSDK
+            --add Microsoft.VisualStudio.Component.VC.ASAN
+            --add Microsoft.VisualStudio.Component.VC.ATL
+            --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
+            --add Microsoft.VisualStudio.Component.VC.Tools.14.34.17.4
+            --add Microsoft.VisualStudio.Component.Windows11SDK.22621
+            --add Microsoft.VisualStudio.Workload.CoreEditor
+            --add Microsoft.VisualStudio.Workload.NativeDesktop
+            --add Component.Microsoft.Windows.DriverKit
+
+    - EnvironmentVariable:
+        Name: Path
+        Value: "%PATH%%AddPATH%"
+        Scope: Machine
